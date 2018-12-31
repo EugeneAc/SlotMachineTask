@@ -90,8 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="TestMachine.cs" />
+    <Compile Include="SlotMachineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

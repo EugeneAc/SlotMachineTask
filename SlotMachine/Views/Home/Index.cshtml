@@ -5,18 +5,22 @@
 
 <div class="jumbotron">
     <div>
-        Total Credits
-        <span id="TotalCredits">@Model.Credits</span>
+        <h2>
+            Total Credits
+            <span id="TotalCredits">@Model.Credits</span>
+        </h2>
     </div>
     <div>
-        Your bet
-        <span id="bet">1</span>
+        <h3>
+            Your bet
+            <span id="bet">1</span>
+        </h3>
     </div>
     <div>
-        <button id="maxBet">Maximize Bet</button>
-        <button id="plusOneBet">+1</button>
-        <button id="spin">Spin</button>
-        <button id="pay">Payout</button>
+        <button class="btn btn-default" id="maxBet">Maximize Bet</button>
+        <button class="btn btn-default" id="plusOneBet">+1</button>
+        <button class="btn btn-default" id="spin">Spin</button>
+        <button class="btn btn-default" id="pay">Payout</button>
     </div>
 </div>
 
@@ -25,7 +29,7 @@
     {
         string slotId = "slot"+i;
         <div>
-            <ul class="slot" id="@slotId">
+            <ul class="slot list-unstyled" id="@slotId">
                 @foreach (var symbol in Model.Slots[i])
                 {
                     string imgsrc = symbol + ".png";

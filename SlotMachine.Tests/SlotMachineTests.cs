@@ -1,10 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SlotMachine.Machines;
+using System.Linq;
 
 namespace SlotMachine.Tests
 {
     [TestClass]
-    public class TestMachine
+    public class SlotMachineTests
     {
         [TestMethod]
         public void TestSlotLengthEquals16()
@@ -40,6 +41,27 @@ namespace SlotMachine.Tests
             var money = VirtualSlotMachine.CalcPayout(combination, 2);
 
             Assert.IsTrue(money == 200);
+        }
+
+        [TestMethod]
+        public void TestSlotContainsDistributionSymbols()
+        {
+            string[] SymbolDistribution = new string[]
+           {
+               ProjectContstants.Seven,
+               ProjectContstants.Bar3,
+               ProjectContstants.Bar2,
+               ProjectContstants.Bar2,
+               ProjectContstants.Bar,
+               ProjectContstants.Bar,
+               ProjectContstants.Bar,
+               ProjectContstants.Cherry
+           };
+           var machine = new VirtualSlotMachine(3);
+
+            foreach (var slot in machine.Slots)
+                Assert.IsFalse(SymbolDistribution.Except(slot).Any());
+
         }
     }
 }

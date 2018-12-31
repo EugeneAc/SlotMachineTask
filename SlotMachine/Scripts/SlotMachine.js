@@ -30,7 +30,7 @@ $(document).ready(function () {
                         {
                             type: "POST",
                             data: { 'combination': winSymbols, 'credits': playCredits },
-                            url: "Home/CheckCombination",
+                            url: "/Home/CheckCombination",
                             success: function (returnValue) {
                                 alert("You win " + returnValue);
                                 SubstractFromTotalCredits(returnValue*-1);

@@ -25,6 +25,11 @@ namespace SlotMachine
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/SlotMachine").Include(
+                      "~/Scripts/jquery.easing.{version}.js",
+                      "~/Scripts/jquery.jSlots.js",
+                      "~/Scripts/SlotMachine.js"));
         }
     }
 }
